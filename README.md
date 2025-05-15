@@ -2,13 +2,20 @@
 
 This example allows you to deploy a remote MCP server that doesn't require authentication on Cloudflare Workers. 
 
+## Important Note for WebContainer Users
+
+⚠️ Local development using `wrangler dev` is not currently supported in the WebContainer environment. To test and run your MCP server, you'll need to:
+
+1. Deploy directly to Cloudflare Workers using the deploy button below
+2. Or clone this repository locally to use `wrangler dev`
+
 ## Get started: 
 
 [![Deploy to Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/ai/tree/main/demos/remote-mcp-authless)
 
 This will deploy your MCP server to a URL like: `remote-mcp-server-authless.<your-account>.workers.dev/sse`
 
-Alternatively, you can use the command line below to get the remote MCP Server created on your local machine:
+For local development outside of WebContainer, you can use:
 ```bash
 npm create cloudflare@latest -- my-mcp-server --template=cloudflare/ai/demos/remote-mcp-authless
 ```
@@ -47,4 +54,4 @@ Update with this configuration:
 }
 ```
 
-Restart Claude and you should see the tools become available. 
+Restart Claude and you should see the tools become available.
